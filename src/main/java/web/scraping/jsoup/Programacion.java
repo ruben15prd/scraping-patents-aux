@@ -17,6 +17,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -293,6 +294,11 @@ public class Programacion {
 					patents.insertOne(docu);
 					*/
 				}
+				
+				
+				Bson filter = new Document();
+				patents.deleteMany(filter);
+				
 				patents.insertMany(documents);
 				client.close();
 
