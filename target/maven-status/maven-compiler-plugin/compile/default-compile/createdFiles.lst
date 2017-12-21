@@ -1,0 +1,9 @@
+web\scraping\jsoup\PatentsJsoup.class
+web\scraping\jsoup\ImgInfo.class
+web\service\ServingLayerConfiguration.class
+web\service\ServingLayerController.class
+web\scraping\jsoup\TestJsoup.class
+web\scraping\jsoup\TestJsoupScholar.class
+web\scraping\jsoup\Area.class
+web\scraping\jsoup\Patent.class
+web\scraping\jsoup\Researcher.class
