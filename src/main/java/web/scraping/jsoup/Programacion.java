@@ -27,6 +27,8 @@ import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
+import utils.Utils;
+
 public class Programacion {
 
 	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
@@ -194,7 +196,7 @@ public class Programacion {
 
 				// Retrieving a collection
 
-				MongoCollection<Document> patents = db.getCollection("patentsAux");
+				MongoCollection<Document> patentsAux = db.getCollection("patentsAux");
 
 				// Note that the insert method can take either an array or a document.
 				List<String> researchers2 = new ArrayList<String>();
@@ -297,10 +299,16 @@ public class Programacion {
 				
 				
 				Bson filter = new Document();
-				patents.deleteMany(filter);
+				patentsAux.deleteMany(filter);
 				
-				patents.insertMany(documents);
+				patentsAux.insertMany(documents);
+				
+				
+				
+				
 				client.close();
+				
+				//Utils.interseccionPatentes();
 
 				// System.out.println("Document inserted successfully");
 
